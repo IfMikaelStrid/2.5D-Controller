@@ -25,7 +25,7 @@ public class playerMOVE : MonoBehaviour {
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             playertrn.Translate(new Vector3(speed, 0, 0) * speed * Time.deltaTime * Mathf.Log(x));
-            x = x + 0.05f;
+            if (Mathf.Log(x) < 1) x = x + 0.05f;
         }
         else if (Input.GetKeyUp(KeyCode.RightArrow))
         {
@@ -35,7 +35,7 @@ public class playerMOVE : MonoBehaviour {
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             playertrn.Translate(new Vector3(-speed, 0, 0) * speed * Time.deltaTime * Mathf.Log(x));
-            x = x + 0.05f;
+            if (Mathf.Log(x) < 1) x = x + 0.05f; 
         }
         else if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
